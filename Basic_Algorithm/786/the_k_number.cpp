@@ -13,8 +13,8 @@ int main() {
     return 0;
 }
 
-int quick_sort(int a[], int l, int r, int k) {
-    if (l >= r) return a[l];
+int quick_sort(int a[], int l, int r, int k){
+    if (l >= r) return a[k - 1];
     int i = l, j = r, pivot = a[(i + j) >> 1];
     while (true) {
         while (a[i] < pivot) i++;
@@ -22,6 +22,6 @@ int quick_sort(int a[], int l, int r, int k) {
         if (i >= j) break;
         swap(a[i++], a[j--]);
     }
-    if (k <= j - l + 1) return quick_sort(a, l, j, k);
-    else return quick_sort(a, j + 1, r, k - j + l - 1);
+    if (k -  1<= j) return quick_sort(a, l, j, k);
+    else return quick_sort(a, j + 1, r, k);
 }
