@@ -29,5 +29,5 @@ void merge_sort(int a[], int l, int r) {
   }
   while (i <= m) t[k++] = a[i++];
   while (j <= r) t[k++] = a[j++];
-  for (int i = l, k = 0; i <= r; i++, k++) a[i] = t[k];
+  for (i = l, k = 0; i <= r; i++, k++) a[i] = t[k];
 }

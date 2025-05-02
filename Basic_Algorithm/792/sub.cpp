@@ -1,34 +1,3 @@
-# 高精度减法
-给定两个正整数（不含前导 $0$），计算它们的差，计算结果可能为负数。
-
-## 输入格式
-
-共两行，每行包含一个整数。
-
-## 输出格式
-
-共一行，包含所求的差。
-
-## 数据范围
-
-$$1 \le 整数长度 \le 10^5$$
-
-## 输入样例：
-
-```text
-32
-11
-```
-
-## 输出样例：
-
-```text
-21
-```
-
-## Solution
-
-```Cpp
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -82,4 +51,3 @@ vector<int> sub(vector<int> &a, vector<int> &b) {
     while (c.size() > 1 && c.back() == 0) c.pop_back();
     return c;
 }
-```

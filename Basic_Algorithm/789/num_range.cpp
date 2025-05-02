@@ -42,7 +42,7 @@ int binary_search_right(int a[], int l, int r, int k) {
     } else if (a[m] < k) {
       l = m + 1;
     } else {
-      r = m -1;
+      r = m - 1;
     }
     m = (l + r) >> 1;
   }
