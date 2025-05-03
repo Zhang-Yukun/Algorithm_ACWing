@@ -20,6 +20,7 @@ int main() {
 }
 
 vector<int> div(vector<int> &a, int b, int &r) {
+    vector<int> c;
     for (int i = a.size() - 1; i > -1; i--) {
         r = r * 10 + a[i];
         c.emplace_back(r / b);

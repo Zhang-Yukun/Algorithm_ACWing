@@ -2,7 +2,7 @@
 using namespace std;
 
 const int N = 1e5 + 10;
-int n, m, t, l, r, c, d[N];
+int n, m, l, r, c, t, d[N];
 
 void add(int l, int r, int c);
 

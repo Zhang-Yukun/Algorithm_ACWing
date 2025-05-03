@@ -18,6 +18,7 @@ int main() {
 }
 
 vector<int> mul(vector<int> &a, int b) {
+    vector<int> c;
     int t = 0, i = 0;
     while (i < a.size() || t) {
         if (i < a.size()) t += a[i++] * b;
