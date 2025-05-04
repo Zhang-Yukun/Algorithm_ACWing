@@ -19,13 +19,12 @@ int main() {
 vector<int> add(vector<int> &a, vector<int> &b) {
     vector<int> c;
     int i = 0, t = 0;
-    while (i < a.size() || i < b.size()) {
+    while (i < a.size() || i < b.size() || t) {
         if (i < a.size()) t += a[i];
         if (i < b.size()) t += b[i];
         i++;
         c.emplace_back(t % 10);
         t /= 10;
     }
-    if (t) c.emplace_back(t);
     return c;
 }

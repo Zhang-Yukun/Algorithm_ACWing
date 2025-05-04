@@ -19,12 +19,12 @@ int main() {
 
 vector<int> mul(vector<int> &a, int b) {
     vector<int> c;
-    int t = 0, i = 0;
+    int i = 0, t = 0;
     while (i < a.size() || t) {
         if (i < a.size()) t += a[i++] * b;
         c.emplace_back(t % 10);
         t /= 10;
     }
-    while (c.size() > 1 && c.back() == 0) c.pop_back();
+    while (c.size() > 1 && !c.back()) c.pop_back();
     return c;
 }

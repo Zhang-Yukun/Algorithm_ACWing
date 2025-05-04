@@ -14,12 +14,15 @@ int main() {
         interval.emplace_back(l, r);
     }
     sort(interval.begin(), interval.end());
-    l = interval[0].first, r = interval[0].second, res = 1;
+    l = interval[0].first, r = interval[0].second;
+    res = 1;
     for (int i = 1; i < interval.size(); i++) {
         if (interval[i].first > r) {
             res++;
             l = interval[i].first, r = interval[i].second;
-        } else if (interval[i].second > r) r = interval[i].second;
+        } else if (interval[i].second > r) {
+            r = interval[i].second;
+        }
     }
     printf("%d", res);
     return 0;

@@ -27,6 +27,6 @@ vector<int> div(vector<int> &a, int b, int &r) {
         r %= b;
     }
     reverse(c.begin(), c.end());
-    while (c.size() > 1 && c.back() == 0) c.pop_back();
+    while (c.size() > 1 && !c.back()) c.pop_back();
     return c;
 }

@@ -2,7 +2,7 @@
 using namespace std;
 
 const int N = 1e5 + 10;
-int n, a[N], cnt[N], res;
+int n, res, a[N], cnt[N];
 
 int main() {
     scanf("%d", &n);

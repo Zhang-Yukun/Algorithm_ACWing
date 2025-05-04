@@ -35,7 +35,7 @@ bool cmp(vector<int> &a, vector<int> &b) {
 
 vector<int> sub(vector<int> &a, vector<int> &b) {
     vector<int> c;
-    int t = 0, i = 0;
+    int i = 0, t = 0;
     while (i < b.size()) {
         t += (a[i] - b[i++]);
         c.emplace_back((t + 10) % 10);
@@ -48,6 +48,6 @@ vector<int> sub(vector<int> &a, vector<int> &b) {
         if (t < 0) t = -1;
         else t = 0;
     }
-    while (c.size() > 1 && c.back() == 0) c.pop_back();
+    while (c.size() > 1 && !c.back()) c.pop_back();
     return c;
 }
