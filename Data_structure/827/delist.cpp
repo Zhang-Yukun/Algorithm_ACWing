@@ -2,7 +2,7 @@
 using namespace std;
 
 const int N = 1e5 + 10;
-int m, k, x, idx, e[N], l[N], r[N];
+int m, k, x, idx = 2, e[N], l[N], r[N];
 char op[3];
 
 void insert_left_head(int x);
@@ -13,7 +13,7 @@ void remove(int k);
 
 int main() {
     scanf("%d", &m);
-    r[0] = 1, l[1] = 0, idx = 2;
+    r[0] = 1, l[1] = 0;
     while (m--) {
         scanf("%s", op);
         if (op[0] == 'L') {
@@ -55,16 +55,16 @@ void insert_right_head(int x) {
 
 void insert_left(int k, int x) {
     e[idx] = x;
-    r[idx] = k;
     l[idx] = l[k];
+    r[idx] = k;
     r[l[k]] = idx;
     l[k] = idx++;
 }
 
 void insert_right(int k, int x) {
     e[idx] = x;
-    l[idx] = k;
     r[idx] = r[k];
+    l[idx] = k;
     l[r[k]] = idx;
     r[k] = idx++;
 }

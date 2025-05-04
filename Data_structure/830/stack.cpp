@@ -6,10 +6,10 @@ int n, x, t, s[N];
 
 int main() {
     scanf("%d", &n);
-    for (int i = 0; i < n; i++) {
+    while (n--) {
         scanf("%d", &x);
         while (t && s[t - 1] >= x) t--;
-        if (t == 0) printf("%d ", -1);
+        if (!t) printf("%d ", -1);
         else printf("%d ", s[t - 1]);
         s[t++] = x;
     }

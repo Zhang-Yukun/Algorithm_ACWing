@@ -2,7 +2,7 @@
 using namespace std;
 
 const int N = 1e5 + 10;
-int m, k, x, h, idx, e[N], ne[N];
+int m, k, x, h, idx = 1, e[N], ne[N];
 char op[2];
 
 void insert_head(int x);
@@ -11,7 +11,6 @@ void remove(int k);
 
 int main() {
     scanf("%d", &m);
-    h = -1, idx = 1;
     while (m--) {
         scanf("%s", op);
         if (op[0] == 'H') {
@@ -25,7 +24,7 @@ int main() {
             insert(k, x);
         }
     }
-    for (int i = h; i != -1; i = ne[i]) printf("%d ", e[i]);
+    for (int i = h; i; i = ne[i]) printf("%d ", e[i]);
     return 0;
 }
 
