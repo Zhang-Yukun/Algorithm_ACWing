@@ -2,12 +2,12 @@
 using namespace std;
 
 const int N = 1e5 + 10;
-int n, m, k, x, t, idx, h[N], ph[N], hp[N];
+int m, k, x, n, idx, t, h[N], ph[N], hp[N];
 char op[3];
 
 void swap_heap(int u, int v);
 void down(int u);
-void up(int v);
+void up(int u);
 
 int main() {
     scanf("%d", &m);
@@ -19,7 +19,6 @@ int main() {
             h[n] = x;
             hp[n] = idx;
             ph[idx] = n;
-            down(n);
             up(n);
         } else if (op[0] == 'P') {
             printf("%d\n", h[1]);
@@ -53,8 +52,8 @@ void swap_heap(int u, int v) {
 
 void down(int u) {
     int t = u;
-    if (2 * u <= n && h[2 * u] < h[t]) t = 2 * u;
-    if (2 * u + 1 <= n && h[2 * u + 1] < h[t]) t = 2 * u + 1;
+    if (u * 2 <= n && h[u * 2] < h[t]) t = u * 2;
+    if (u * 2 + 1 <= n && h[u * 2 + 1] < h[t]) t = u * 2 + 1;
     if (t != u) {
         swap_heap(t, u);
         down(t);

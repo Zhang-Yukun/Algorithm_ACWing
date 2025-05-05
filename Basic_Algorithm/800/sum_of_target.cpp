@@ -10,10 +10,8 @@ int main() {
     for (int i = 0; i < m; i++) scanf("%d", &b[i]);
     for (i = 0, j = m - 1; i < n; i++) {
         while (a[i] + b[j] > x) j--;
-        if (a[i] + b[j] == x) {
-            printf("%d %d", i, j);
-            break;
-        }
+        if (a[i] + b[j] == x) break;
     }
+    printf("%d %d", i, j);
     return 0;
 }

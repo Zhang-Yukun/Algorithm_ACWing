@@ -22,7 +22,7 @@ int main() {
 
 void insert(int x) {
     int loc = 0, val = 0;
-    for (int i = 30; i >= 0; i--) {
+    for (int i = 31; i >= 0; i--) {
         val = (x >> i) & 1;
         if (!t[loc][val]) t[loc][val] = ++idx;
         loc = t[loc][val];
@@ -31,11 +31,11 @@ void insert(int x) {
 
 int query(int x) {
     int loc = 0, val = 0, res = 0;
-    for (int i = 30; i >= 0; i--) {
+    for (int i = 31; i >= 0; i--) {
         val = (x >> i) & 1;
         res <<= 1;
         if (t[loc][!val]) {
-            res += 1;
+            res++;
             loc = t[loc][!val];
         } else {
             loc = t[loc][val];

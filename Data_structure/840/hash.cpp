@@ -2,32 +2,38 @@
 #include <cstring>
 using namespace std;
 
-const int N = 1e5 + 3, EMPTY = 0x3f3f3f3f;
-int n, x, idx, h[N];
+const int N = 1e5 + 3;
+int n, x, idx, h[N], e[N], ne[N];
 char op[2];
 
-int find(int x);
+bool find(int x);
+void insert(int x);
 
 int main() {
-    memset(h, 0x3f, sizeof(h));
+    memset(h, -1, sizeof(h));
     scanf("%d", &n);
     while (n--) {
         scanf("%s%d", op, &x);
-        idx = find(x);
-        if (op[0] == 'I') h[idx] = x;
+        if (op[0] == 'I') insert(x);
         else {
-            if (h[idx] == x) printf("Yes\n");
+            if (find(x)) printf("Yes\n");
             else printf("No\n");
         }
     }
     return 0;
 }
 
-int find(int x) {
+bool find(int x) {
     int t = ((x % N) + N) % N;
-    while (h[t] != x && h[t] != EMPTY) {
-        t++;
-        if (t == N) t = 0;
+    for (int i = h[t]; i != -1; i = ne[i]) {
+        if (e[i] == x) return true;
     }
-    return t;
+    return false;
+}
+
+void insert(int x) {
+    int t = ((x % N) + N) % N;
+    e[idx] = x;
+    ne[idx] = h[t];
+    h[t] = idx++;
 }

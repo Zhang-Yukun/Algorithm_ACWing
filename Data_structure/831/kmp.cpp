@@ -9,7 +9,7 @@ int main() {
     scanf("%d%s%d%s", &n, p, &m, s);
     for (int i = 1, j = 0; i < n; i++) {
         while (j && p[j] != p[i]) j = ne[j - 1];
-        if (p[i] == p[j]) j++;
+        if (p[j] == p[i]) j++;
         ne[i] = j;
     }
     for (int i = 0, j = 0; i < m; i++) {

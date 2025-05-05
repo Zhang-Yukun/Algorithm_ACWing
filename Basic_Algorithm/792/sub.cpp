@@ -37,7 +37,7 @@ vector<int> sub(vector<int> &a, vector<int> &b) {
     vector<int> c;
     int i = 0, t = 0;
     while (i < b.size()) {
-        t += (a[i] - b[i++]);
+        t += a[i] - b[i++];
         c.emplace_back((t + 10) % 10);
         if (t < 0) t = -1;
         else t = 0;

@@ -19,8 +19,8 @@ int main() {
             scanf("%d%d", &a, &b);
             pa = find(a), pb = find(b);
             if (pa != pb) {
-                cnt[pb] += cnt[pa];
                 p[pa] = pb;
+                cnt[pb] += cnt[pa];
             }
         } else if (op[1] == '1') {
             scanf("%d%d", &a, &b);
@@ -29,7 +29,8 @@ int main() {
             else printf("No\n");
         } else {
             scanf("%d", &a);
-            printf("%d\n", cnt[find(a)]);
+            pa = find(a);
+            printf("%d\n", cnt[pa]);
         }
     }
     return 0;

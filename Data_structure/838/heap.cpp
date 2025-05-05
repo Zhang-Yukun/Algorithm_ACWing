@@ -20,8 +20,8 @@ int main() {
 
 void down(int u) {
     int t = u;
-    if (2 * u <= n && h[2 * u] < h[t]) t = 2 * u;
-    if (2 * u + 1 <= n && h[2 * u + 1] < h[t]) t = 2 * u + 1;
+    if (u * 2 <= n && h[u * 2] < h[t]) t = u * 2;
+    if (u * 2 + 1 <= n && h[u * 2 + 1] < h[t]) t = u * 2 + 1;
     if (t != u) {
         swap(h[t], h[u]);
         down(t);

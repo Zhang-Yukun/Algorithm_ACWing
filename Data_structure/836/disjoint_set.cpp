@@ -2,7 +2,7 @@
 using namespace std;
 
 const int N = 1e5 + 10;
-int n, m, a, b, p[N];
+int n, m, a, b, pa, pb, p[N];
 char op[2];
 
 int find(int x);
@@ -12,10 +12,11 @@ int main() {
     for (int i = 1; i <= n; i++) p[i] = i;
     while (m--) {
         scanf("%s%d%d", op, &a, &b);
+        pa = find(a), pb = find(b);
         if (op[0] == 'M') {
-            p[find(a)] = find(b);
+            if (pa != pb) p[pa] = pb;
         } else {
-            if (find(a) == find(b)) printf("Yes\n");
+            if (pa == pb) printf("Yes\n");
             else printf("No\n");
         }
     }

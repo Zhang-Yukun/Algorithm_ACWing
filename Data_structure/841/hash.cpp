@@ -1,16 +1,15 @@
 #include <iostream>
 using namespace std;
 
-const int N = 1e5 + 10, P = 131;
-unsigned long long h[N], p[N];
+const int N = 1e5 + 10, P = 13331;
 int n, m, l1, r1, l2, r2;
 char s[N];
+unsigned long long p[N], h[N];
 
 unsigned long long find_hash(int l, int r);
 
 int main() {
-    scanf("%d%d", &n, &m);
-    scanf("%s", s + 1);
+    scanf("%d%d%s", &n, &m, s + 1);
     p[0] = 1;
     for (int i = 1; i <= n; i++) {
         p[i] = p[i - 1] * P;

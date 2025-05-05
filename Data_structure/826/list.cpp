@@ -2,7 +2,7 @@
 using namespace std;
 
 const int N = 1e5 + 10;
-int m, k, x, h, idx = 1, e[N], ne[N];
+int m, k, x, h = -1, idx, e[N], ne[N];
 char op[2];
 
 void insert_head(int x);
@@ -21,10 +21,10 @@ int main() {
             remove(k);
         } else {
             scanf("%d%d", &k, &x);
-            insert(k, x);
+            insert(k - 1, x);
         }
     }
-    for (int i = h; i; i = ne[i]) printf("%d ", e[i]);
+    for (int i = h; i != -1; i = ne[i]) printf("%d ", e[i]);
     return 0;
 }
 
@@ -44,6 +44,6 @@ void remove(int k) {
     if (k == 0) {
         h = ne[h];
     } else {
-        ne[k] = ne[ne[k]];
+        ne[k - 1] = ne[ne[k - 1]];
     }
 }
