@@ -10,7 +10,7 @@ int main() {
     h = t = 0;
     for (int i = 0; i < n; i++) {
         while (h < t && q[h] < i - k + 1) h++;
-        while (h < t && a[q[t - 1]] >= a[i]) t--;
+        while (h < t && a[q[t - 1]] > a[i]) t--;
         q[t++] = i;
         if (i >= k - 1) printf("%d ", a[q[h]]);
     }
@@ -18,7 +18,7 @@ int main() {
     h = t = 0;
     for (int i = 0; i < n; i++) {
         while (h < t && q[h] < i - k + 1) h++;
-        while (h < t && a[q[t - 1]] <= a[i]) t--;
+        while (h < t && a[q[t - 1]] < a[i]) t--;
         q[t++] = i;
         if (i >= k - 1) printf("%d ", a[q[h]]);
     }

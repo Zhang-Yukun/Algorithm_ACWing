@@ -1,10 +1,10 @@
 #include <iostream>
 using namespace std;
 
-const int N = 1e5 + 10, P = 13331;
+const int N = 1e5 + 10, P = 131;
 int n, m, l1, r1, l2, r2;
 char s[N];
-unsigned long long p[N], h[N];
+unsigned long long h[N], p[N];
 
 unsigned long long find_hash(int l, int r);
 

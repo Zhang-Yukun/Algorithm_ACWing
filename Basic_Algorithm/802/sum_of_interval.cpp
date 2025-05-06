@@ -1,7 +1,7 @@
 #include <iostream>
 #include <utility>
-#include <algorithm>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
 const int N = 1e5 + 10;

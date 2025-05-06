@@ -22,8 +22,3 @@ int main() {
     }
     return 0;
 }
-
-void add(int l, int r, int c) {
-    d[l] += c;
-    d[r + 1] -= c;
-}

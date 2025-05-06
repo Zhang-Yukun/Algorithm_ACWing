@@ -2,7 +2,7 @@
 using namespace std;
 
 const int N = 1e5 + 10;
-int n, k, q, x, y, res, px, py, p[N], d[N];
+int n, k, q, x, y, px, py, res, p[N], d[N];
 
 int find(int x);
 

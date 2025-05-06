@@ -5,7 +5,7 @@ const int N = 1e5 + 10;
 int n, res, idx, a[N], t[32 * N][2];
 
 void insert(int x);
-int query(int x);
+int find(int x);
 
 int main() {
     scanf("%d", &n);
@@ -14,7 +14,7 @@ int main() {
         insert(a[i]);
     }
     for (int i = 0; i < n; i++) {
-        res = max(res, query(a[i]));
+        res = max(res, find(a[i]));
     }
     printf("%d", res);
     return 0;
@@ -29,7 +29,7 @@ void insert(int x) {
     }
 }
 
-int query(int x) {
+int find(int x) {
     int loc = 0, val = 0, res = 0;
     for (int i = 31; i >= 0; i--) {
         val = (x >> i) & 1;

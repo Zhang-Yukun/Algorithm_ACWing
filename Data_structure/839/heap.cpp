@@ -62,7 +62,7 @@ void down(int u) {
 
 void up(int u) {
     if (u / 2 && h[u] < h[u / 2]) {
-        swap_heap(u, u / 2);
+        swap_heap(u / 2, u);
         up(u / 2);
     }
 }
