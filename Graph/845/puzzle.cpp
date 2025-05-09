@@ -21,7 +21,8 @@ int bfs(string &s) {
     string end = "12345678x", node;
     unordered_map<string, int> d;
     queue<string> q;
-    int pos_x = 0, x = 0, y = 0, a = 0, b = 0, distance = 0, dx[4] = {-1, 1, 0, 0}, dy[4] = {0, 0, -1, 1};
+    int pos_x, x, y, a, b, distance, dx[4] = {-1, 1, 0, 0}, dy[4] = {0, 0, -1, 1};
+    d[s] = 0;
     q.push(s);
     while (!q.empty()) {
         node = q.front();

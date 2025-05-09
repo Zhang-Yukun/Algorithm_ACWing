@@ -22,20 +22,17 @@ int main() {
 }
 
 void add(int a, int b) {
-    e[idx] = b;
-    ne[idx] = h[a];
-    h[a] = idx++;
+    e[idx] = b, ne[idx] = h[a], h[a] = idx++;
 }
 
 int dfs(int u) {
-    int t, sum = 1, ans = 0, s = 0;
+    int sum = 1, s = 0, ans = 0;
     v[u] = true;
     for (int i = h[u]; i != -1; i = ne[i]) {
-        t = e[i];
-        if (!v[t]) {
-            s = dfs(t);
-            ans = max(ans, s);
+        if (!v[e[i]]) {
+            s = dfs(e[i]);
             sum += s;
+            ans = max(ans, s);
         }
     }
     ans = max(ans, n - sum);

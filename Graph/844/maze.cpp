@@ -7,18 +7,18 @@ const int N = 1e2 + 10;
 int n, m, h, t, g[N][N], d[N][N];
 pair<int, int> q[N * N];
 
-int bfs(int g[][N]);
+int bfs(int n, int m);
 
 int main() {
     scanf("%d%d", &n, &m);
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < m; j++) scanf("%d", &g[i][j]);
     }
-    printf("%d", bfs(g));
+    printf("%d", bfs(n, m));
     return 0;
 }
 
-int bfs(int g[][N]) {
+int bfs(int n, int m) {
     memset(d, -1, sizeof(d));
     d[0][0] = 0;
     int x = 0, y = 0, dx[4] = {-1, 1, 0, 0}, dy[4] = {0, 0, -1, 1};
