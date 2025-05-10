@@ -26,7 +26,7 @@ int dijkstra(int n) {
     for (int i = 0; i < n; i++) {
         t = 0;
         for (int j = 1; j <= n; j++) {
-            if (!v[j] && (!t || d[t] > d[j])) t = j;
+            if (!v[j] && (!t || d[j] < d[t])) t = j;
         }
         v[t] = true;
         for (int j = 1; j <= n; j++) d[j] = min(d[j], d[t] + g[t][j]);

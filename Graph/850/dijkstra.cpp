@@ -7,7 +7,7 @@
 using namespace std;
 
 const int N = 2e5 + 10;
-int n, m, x, y, z, idx, d[N], h[N], e[N], w[N], ne[N];
+int n, m, x, y, z, idx, h[N], e[N], w[N], ne[N], d[N];
 bool v[N];
 
 void add(int a, int b, int c);
@@ -42,8 +42,8 @@ int dijkstra(int n) {
         if (v[node]) continue;
         v[node] = true;
         for (int i = h[node]; i != -1; i = ne[i]) {
-            if (d[node] + w[i] < d[e[i]]) {
-                d[e[i]] = d[node] + w[i];
+            if (d[e[i]] > distance + w[i]) {
+                d[e[i]] = distance + w[i];
                 heap.push({d[e[i]], e[i]});
             }
         }
