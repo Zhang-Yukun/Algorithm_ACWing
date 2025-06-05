@@ -150,7 +150,13 @@ AcWing 2. 01背包问题
 AcWing 3. 完全背包问题
 AcWing 4. 多重背包问题
 AcWing 5. 多重背包问题 II
+AcWing 6. 多重背包问题 III
+AcWing 7. 混合背包问题
+AcWing 8. 二维费用的背包问题
 AcWing 9. 分组背包问题
+AcWing 10. 有依赖的背包问题
+AcWing 11. 背包问题求方案数
+AcWing 12. 背包问题求具体方案
 ### 线性DP
 AcWing 898. 数字三角形
 AcWing 895. 最长上升子序列
